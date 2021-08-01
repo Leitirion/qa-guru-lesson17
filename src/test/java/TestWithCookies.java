@@ -15,13 +15,13 @@ public class TestWithCookies {
             String authorizationCookie =
                     given()
                             .contentType("application/x-www-form-urlencoded; charset=UTF-8")
-                            .body("addtocart_31.EnteredQuantity=3")
+                            .body("addtocart_42.EnteredQuantity=4")
                             .when()
-                            .post("http://demowebshop.tricentis.com/addproducttocart/details/31/1")
+                            .post("http://demowebshop.tricentis.com/addproducttocart/details/42/1")
                             .then()
                             .statusCode(200)
                             .body("success", is(true))
-                            .body("updatetopcartsectionhtml", is("(3)"))
+                            .body("updatetopcartsectionhtml", is("(4)"))
                             .extract().cookie("Nop.customer");
 
             step("Set cookie to browser", () -> {
@@ -32,7 +32,7 @@ public class TestWithCookies {
             });
 
             step("Check the cart", () -> {
-                $(".cart-qty").shouldHave(text("3"));
+                $(".cart-qty").shouldHave(text("4"));
             });
         });
     }
