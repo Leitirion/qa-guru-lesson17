@@ -1,7 +1,6 @@
 # **Tests for guru.qa lesson #17**
-1. Тесты с получением и подставлением cookies
-
-2. Запуск тестов:
+Тесты с получением и подставлением cookies
+ - Запуск тестов
 ```bash
-gradle clean test
+./gradlew clean test
 ```
